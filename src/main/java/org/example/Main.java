@@ -21,6 +21,7 @@ public class Main {
         try {
             String url = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=" + URLEncoder.encode(topic, "UTF-8");
             String response = getHttpResponse(url);
+            // program constructs a URL string that will be used to query the Wikipedia API using
             JSONObject jsonObject = new JSONObject(response);
             JSONArray jsonArray = jsonObject.getJSONObject("query").getJSONArray("search");
             if (jsonArray.length() > 0) {
