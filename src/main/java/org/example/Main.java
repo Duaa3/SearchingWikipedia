@@ -15,6 +15,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a topic of interest: ");
         String topic = scanner.nextLine();
+        System.out.println("title : "+topic);
         scanner.close();
 
         try {
@@ -33,6 +34,7 @@ public class Main {
                     snippet = snippet.replaceAll("<.*?>", ""); // Remove HTML tags
                     snippet = snippet.replaceAll("\\s+", " "); // Collapse whitespace
                     System.out.println("- " + snippet);
+
                 }
             } else {
                 System.out.println("Sorry no Wikipedia article was found for \"" + topic + "\".");
