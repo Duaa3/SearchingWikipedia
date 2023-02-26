@@ -25,7 +25,7 @@ public class Main {
             if (jsonArray.length() > 0) {
                 String pageTitle = jsonArray.getJSONObject(0).getString("title");
                 String pageUrl = "https://en.wikipedia.org/wiki/" + pageTitle.replace(" ", "_");
-                System.out.println("Here is the Wikipedia article for \"" + topic + "\":");
+                System.out.println("Hereis the Wikipedia article for \"" + topic + "\":");
                 System.out.println(pageUrl);
                 System.out.println("Here are some related snippets:");
                 for (int i = 0; i < 3 && i < jsonArray.length(); i++) {
