@@ -15,13 +15,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a topic of interest: ");
         String topic = scanner.nextLine();
-        System.out.println("title : "+topic);
         scanner.close();
 
         try {
             String url = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=" + URLEncoder.encode(topic, "UTF-8");
             String response = getHttpResponse(url);
-            // program constructs a URL string that will be used to query the Wikipedia API using
             JSONObject jsonObject = new JSONObject(response);
             JSONArray jsonArray = jsonObject.getJSONObject("query").getJSONArray("search");
             if (jsonArray.length() > 0) {
@@ -34,7 +32,7 @@ public class Main {
                     String snippet = jsonArray.getJSONObject(i).getString("snippet");
                     snippet = snippet.replaceAll("<.*?>", ""); // Remove HTML tags
                     snippet = snippet.replaceAll("\\s+", " "); // Collapse whitespace
-                    System.out.println("* " + snippet);
+                    System.out.println("* " +  snippet);
 
                 }
             } else {
