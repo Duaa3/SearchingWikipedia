@@ -33,7 +33,7 @@ public class Main {
                     String snippet = jsonArray.getJSONObject(i).getString("snippet");
                     snippet = snippet.replaceAll("<.*?>", ""); // Remove HTML tags
                     snippet = snippet.replaceAll("\\s+", " "); // Collapse whitespace
-                    System.out.println("- " + snippet);
+                    System.out.println("* " + snippet);
 
                 }
             } else {
